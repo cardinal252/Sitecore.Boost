@@ -13,7 +13,7 @@ using Sitecore.Globalization;
 using Sitecore.IO;
 using Sitecore.Links;
 
-namespace Sitecore.Boost.Tracker
+namespace Sitecore.Boost.LightTrackingField
 {
     public class LightTrackingField : CustomField
     {

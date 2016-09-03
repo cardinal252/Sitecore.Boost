@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Boost.TrackingField</RootNamespace>
-    <AssemblyName>Sitecore.Boost.TrackingField</AssemblyName>
+    <RootNamespace>Sitecore.Boost.LightTrackingField</RootNamespace>
+    <AssemblyName>Sitecore.Boost.LightTrackingField</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -47,6 +47,7 @@
     </Reference>
     <Reference Include="Sitecore.Analytics.DataAccess">
       <HintPath>..\..\..\Lib\Sitecore 8.1\Sitecore.Analytics.DataAccess.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\Lib\Sitecore 8.1\Sitecore.Kernel.dll</HintPath>
@@ -61,7 +62,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.Boost\Sitecore.Boost.TrackingField.config" />
+    <Content Include="App_Config\Include\Sitecore.Boost\Sitecore.Boost.LightTrackingField.config" />
+    <None Include="Properties\PublishProfiles\Custom.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

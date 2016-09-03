@@ -41,10 +41,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\Lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -72,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\Custom.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -80,7 +77,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Config\Include\Sitecore.Boost\GetFromLayoutField.config" />
+    <Content Include="App_Config\Include\Sitecore.Boost\GetFromLayoutField.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

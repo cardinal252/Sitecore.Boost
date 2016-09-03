@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mvc", "Mvc", "{903C8453-948
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.RenderingParser", "Sitecore.Boost.RenderingParser\Sitecore.Boost.RenderingParser.csproj", "{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.TrackingField", "8.1\Sitecore.Boost.TrackingField\Sitecore.Boost.TrackingField.csproj", "{08608A65-609F-43A3-B7FC-2051A41EB8F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.LightTrackingField", "8.1\Sitecore.Boost.TrackingField\Sitecore.Boost.LightTrackingField.csproj", "{08608A65-609F-43A3-B7FC-2051A41EB8F8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.InitializeProfiling", "Sitecore.Boost.InitializeProfiling\Sitecore.Boost.InitializeProfiling.csproj", "{3217F16B-E818-45D3-AD39-69B3C4532374}"
 EndProject

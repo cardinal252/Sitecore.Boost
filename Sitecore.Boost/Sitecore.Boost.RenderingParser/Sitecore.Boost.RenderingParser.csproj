@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\Custom.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -76,9 +77,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Config\Include\Sitecore.Boost\Sitecore.Boost.RenderingParser.config">
+    <Content Include="App_Config\Include\Sitecore.Boost\Sitecore.Boost.RenderingParser.config">
       <SubType>Designer</SubType>
-    </None>
+    </Content>
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

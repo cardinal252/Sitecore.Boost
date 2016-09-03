@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Threading;
 using System.Web;
 using Sitecore.Analytics;
@@ -19,7 +18,7 @@ using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 using Sitecore.Sites;
 
-namespace Sitecore.Boost.Tracker
+namespace Sitecore.Boost.LightTrackingField
 {
     public class LightTracker : ITracker
     {

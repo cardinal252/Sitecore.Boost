@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using NUnit.Framework;
 using Sitecore.Analytics.Data;
-using Sitecore.Boost.Tracker;
+using Sitecore.Boost.LightTrackingField;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
@@ -56,7 +56,7 @@ namespace Sitecore.Boost.IntegrationTests
             Field field = item.Fields["__tracking"];
             for (var i = 0; i < 1000; i++)
             {
-                LightTrackingField trackingField = new LightTrackingField(field);
+                TrackingField trackingField = new TrackingField(field);
                 Assert.IsTrue(trackingField != null);
             }
             sw.Stop();
@@ -74,7 +74,7 @@ namespace Sitecore.Boost.IntegrationTests
 
             // Act
             Field field = item.Fields["__tracking"];
-            LightTrackingField trackingField = new LightTrackingField(field);
+            TrackingField trackingField = new TrackingField(field);
             Assert.IsTrue(trackingField != null);
 
             // Assert

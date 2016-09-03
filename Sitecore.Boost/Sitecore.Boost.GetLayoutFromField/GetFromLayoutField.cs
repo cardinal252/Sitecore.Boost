@@ -11,6 +11,10 @@ namespace Sitecore.Boost.GetLayoutFromField
     {
         protected IBoostContext BoostContext { get; private set; }
 
+        public GetFromLayoutField() : this(Core.Configuration.BoostContext.Default)
+        {
+        }
+
         public GetFromLayoutField(IBoostContext boostContext)
         {
             BoostContext = boostContext;

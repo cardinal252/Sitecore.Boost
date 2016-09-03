@@ -1,5 +1,6 @@
 ﻿
 
+using System.Collections.Concurrent;
 using System.Runtime.Caching;
 
 namespace Sitecore.Boost.Core.Caching
@@ -8,17 +9,18 @@ namespace Sitecore.Boost.Core.Caching
     {
         private const string CacheName = "Sitecore.Boost";
 
-        private static MemoryCache memoryCache = new MemoryCache(CacheName);
+        private static ConcurrentDictionary<string, object> memoryCache = new ConcurrentDictionary<string, object>();
 
         public T Get<T>(string cacheKey) where T : class
         {
-            return memoryCache.Get(cacheKey) as T;
+            object result;
+            return memoryCache.TryGetValue(cacheKey, out result) ? result as T : default(T);
         }
 
         public T GetValue<T>(string cacheKey) where T : struct
         {
-            var result = memoryCache.Get(cacheKey);
-            if (result == null)
+            object result;
+            if (!memoryCache.TryGetValue(cacheKey, out result))
             {
                 return default(T);
             }
@@ -28,24 +30,22 @@ namespace Sitecore.Boost.Core.Caching
 
         public void Add<T>(string cacheKey, T item) where T : class
         {
-            CacheItemPolicy policy = new CacheItemPolicy();
-            memoryCache.Add(cacheKey, item, policy);
+            memoryCache.TryAdd(cacheKey, item);
         }
 
         public void AddValue<T>(string cacheKey, T item) where T : struct
         {
-            CacheItemPolicy policy = new CacheItemPolicy();
-            memoryCache.Add(cacheKey, item, policy);
+            memoryCache.TryAdd(cacheKey, item);
         }
 
         public void Clear()
         {
-            memoryCache = new MemoryCache(CacheName);
+            memoryCache = new ConcurrentDictionary<string, object>();
         }
 
         public bool Contains(string cacheKey)
         {
-            return memoryCache.Contains(cacheKey);
+            return memoryCache.ContainsKey(cacheKey);
         }
     }
 }

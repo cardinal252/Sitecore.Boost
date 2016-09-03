@@ -2,7 +2,7 @@
 using Sitecore.Boost.Core.Configuration;
 using Sitecore.Diagnostics;
 
-namespace Sitecore.Boost.Tracker
+namespace Sitecore.Boost.LightTrackingField
 {
     public class GetLightTrackerProcessor : CreateTrackerProcessor
     {

@@ -253,9 +253,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sitecore.Boost.TrackingField\Sitecore.Boost.TrackingField.csproj">
+    <ProjectReference Include="..\Sitecore.Boost.TrackingField\Sitecore.Boost.LightTrackingField.csproj">
       <Project>{08608a65-609f-43a3-b7fc-2051a41eb8f8}</Project>
-      <Name>Sitecore.Boost.TrackingField</Name>
+      <Name>Sitecore.Boost.LightTrackingField</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

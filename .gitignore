@@ -250,3 +250,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+Lib/Sitecore/*
+!Lib/Sitecore/Sitecore Libs Here.txt
+
+Lib/Sitecore 8.1/*
+!Lib/Sitecore 8.1/Sitecore Libs Here.txt

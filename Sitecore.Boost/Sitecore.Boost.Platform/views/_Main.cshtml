@@ -1,0 +1,10 @@
+﻿@using Sitecore.Mvc
+<!DOCTYPE html>
+<html>
+@Html.Sitecore().Placeholder("head")
+<body>
+<h1>@Html.Sitecore().Field("Title")</h1>
+@Html.Sitecore().Placeholder("content")
+@Html.Sitecore().Placeholder("footer")
+</body>
+</html>

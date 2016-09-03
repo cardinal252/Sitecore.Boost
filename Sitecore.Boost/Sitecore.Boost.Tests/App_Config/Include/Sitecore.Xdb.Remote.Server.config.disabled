@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+Purpose: This include file configures the current server as a remote reporting server by enabling the reporting service that makes
+reporting data available to remote reporting clients.
+
+To enable this include file, rename it so that is has a ".config" extension.
+
+-->
+
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <customHandlers>
+      <handler trigger="/~/v75/reporting/remotedatasourceproxy" type="Sitecore.Analytics.Reporting.Datasources.Remote.RemoteReportDataSourceProxyHandler, Sitecore.Analytics" />
+      <handler trigger="/~/v75/reporting/masterdata/datadefinitionservice" type="Sitecore.Analytics.Reporting.DefinitionData.RemoteMasterDataDefinitionServiceHandler, Sitecore.Analytics" />
+      <handler trigger="/~/v80/publish/taxonomy/" type="Sitecore.Marketing.Taxonomy.Deploy.TaxonomyDeployRequestHandler, Sitecore.Marketing.Taxonomy" />
+
+      <!-- remote definition handlers to receive requests from remote repositories -->
+      <handler trigger="/~/v80/marketingdefinitions/remote/campaign" type="Sitecore.Marketing.Definitions.Campaigns.Data.Remote.CampaignRemoteDefinitionHandler, Sitecore.Marketing" />
+      <handler trigger="/~/v80/marketingdefinitions/remote/goal" type="Sitecore.Marketing.Definitions.Goals.Data.Remote.GoalRemoteDefinitionHandler, Sitecore.Marketing" />
+      <handler trigger="/~/v80/marketingdefinitions/remote/outcome" type="Sitecore.Marketing.Definitions.Outcomes.Data.Remote.OutcomeRemoteDefinitionHandler, Sitecore.Marketing" />
+    </customHandlers>
+
+
+    <taxonomy>
+      <knownManagers>
+        <campaignGroupTaxonomyManager type="Sitecore.Marketing.Taxonomy.CampaignGroupTaxonomyManager, Sitecore.Marketing.Taxonomy" singleInstance="true">
+          <param desc="repository">
+            <patch:attribute name="ref">taxonomy/repositories/rdbTaxonomyRepository</patch:attribute>
+          </param>
+        </campaignGroupTaxonomyManager>
+
+        <channelTaxonomyManager type="Sitecore.Marketing.Taxonomy.ChannelTaxonomyManager, Sitecore.Marketing.Taxonomy" singleInstance="true">
+          <param desc="repository">
+            <patch:attribute name="ref">taxonomy/repositories/rdbTaxonomyRepository</patch:attribute>
+          </param>
+        </channelTaxonomyManager>
+
+        <assetTaxonomyManager type="Sitecore.Marketing.Taxonomy.AssetTaxonomyManager, Sitecore.Marketing.Taxonomy" singleInstance="true">
+          <param desc="repository">
+            <patch:attribute name="ref">taxonomy/repositories/rdbTaxonomyRepository</patch:attribute>
+          </param>
+        </assetTaxonomyManager>
+      </knownManagers>
+
+      <customTaxonomyManager type="Sitecore.Marketing.Taxonomy.CustomTaxonomyManager, Sitecore.Marketing.Taxonomy" singleInstance="true">
+        <param desc="repository">
+          <patch:attribute name="ref">taxonomy/repositories/rdbTaxonomyRepository</patch:attribute>
+        </param>
+      </customTaxonomyManager>
+
+    </taxonomy>
+
+    <marketingDefinitions>
+
+      <campaign definitionInterface="Sitecore.Marketing.Definitions.Campaigns.ICampaignActivityDefinition, Sitecore.Marketing">
+        <definitionManager type="Sitecore.Marketing.Definitions.Campaigns.CampaignDefinitionManager, Sitecore.Marketing" singleInstance="true">
+          <param desc="repository">
+            <patch:attribute name="ref">marketingDefinitions/campaign/repositories/rdb</patch:attribute>
+          </param>
+        </definitionManager>
+      </campaign>
+
+      <goal definitionInterface="Sitecore.Marketing.Definitions.Goals.IGoalDefinition, Sitecore.Marketing">
+        <definitionManager type="Sitecore.Marketing.Definitions.Goals.GoalDefinitionManager, Sitecore.Marketing" singleInstance="true">
+          <param desc="repository">
+            <patch:attribute name="ref">marketingDefinitions/goal/repositories/rdb</patch:attribute>
+          </param>
+        </definitionManager>
+      </goal>
+
+      <outcome definitionInterface="Sitecore.Marketing.Definitions.Outcomes.Model.IOutcomeDefinition, Sitecore.Marketing">
+        <definitionManager type="Sitecore.Marketing.Definitions.Outcomes.OutcomeDefinitionManager, Sitecore.Marketing" singleInstance="true">
+          <param desc="repository">
+            <patch:attribute name="ref">marketingDefinitions/outcome/repositories/rdb</patch:attribute>
+          </param>
+        </definitionManager>
+      </outcome>
+
+    </marketingDefinitions>
+
+  </sitecore>
+</configuration>

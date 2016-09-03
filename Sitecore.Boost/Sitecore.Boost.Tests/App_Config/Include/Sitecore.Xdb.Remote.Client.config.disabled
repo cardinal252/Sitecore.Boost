@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+Purpose: This include file contains the configuration settings that let the reporting APIs communicate with a remote reporting server. This
+is useful in environments where the reporting SQL Server is located behind a firewall or where you want to use a separate reporting server.
+
+To enable this include file, rename it so that is has a ".config" extension and update the serviceUrl element with the host name of your
+reporting server.
+
+-->
+
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+
+    <aggregation>
+      <reportingStorageProviders>
+        <remote type="Sitecore.Analytics.Reporting.DefinitionData.RemoteWriteOnlyDefinitionsStorageProvider, Sitecore.Analytics" singleInstance="true" />
+      </reportingStorageProviders>
+    </aggregation>
+
+    <httpTransportFactory type="Sitecore.Analytics.Commons.ConfigurationBasedHttpTransportFactory, Sitecore.Analytics" singleInstance="true">
+      <param desc="serviceUrl"></param>
+    </httpTransportFactory>
+
+    <reporting>
+      <remote enabled="true">
+        <proxyDataSource type="Sitecore.Analytics.Reporting.Datasources.Remote.RemoteReportDataSourceProxy, Sitecore.Analytics" />
+        <paths>
+          <Reporting>/~/v75/reporting/remotedatasourceproxy/</Reporting>
+          <DefinitionDeployment>/~/v75/reporting/masterdata/datadefinitionservice/</DefinitionDeployment>
+        </paths>
+      </remote>
+    </reporting>
+
+    <marketingDefinitions>
+      
+      <deploymentManager>
+        <param desc="targetRepository">remote</param>
+      </deploymentManager>
+
+      <!--Enable remote definition repositories-->
+      <campaign>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.Campaigns.Data.Remote.CampaignRemoteDefinitionRepository, Sitecore.Marketing" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/campaign/</param>
+          </remote>
+        </repositories>
+      </campaign>
+
+      <goal>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.Goals.Data.Remote.GoalRemoteDefinitionRepository, Sitecore.Marketing" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/goal/</param>
+          </remote>
+        </repositories>
+      </goal>
+
+      <outcome>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.Outcomes.Data.Remote.OutcomeRemoteDefinitionRepository, Sitecore.Marketing" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/outcome/</param>
+          </remote>
+        </repositories>
+      </outcome>
+      <!--End-->
+      
+    </marketingDefinitions>
+
+    <taxonomy>
+      <deployHandler>
+        <patch:delete />
+      </deployHandler>
+
+      <deployHandler type="Sitecore.Marketing.Taxonomy.Deploy.HttpDeployHandler, Sitecore.Marketing.Taxonomy" singleInstance="true">
+        <param desc="httpTransport" ref="httpTransportFactory"/>
+        <param desc="publishPath">/~/v80/publish/taxonomy/</param>
+      </deployHandler>
+    </taxonomy>
+  </sitecore>
+</configuration>

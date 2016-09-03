@@ -1,0 +1,93 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <contentSearch>
+      <configuration type="Sitecore.ContentSearch.ContentSearchConfiguration, Sitecore.ContentSearch">
+        <indexes hint="list:AddIndex">
+          <!-- Index used for storing test definition data -->
+          <index id="sitecore_testing_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="name">$(id)</param>
+            <param desc="core">$(id)</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)" />
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration">
+              <include hint="list:IncludeTemplate">
+                <TestDefinitionItem>{45FB02E9-70B3-4CFE-8050-06EAD4B5DB3E}</TestDefinitionItem>
+              </include>
+              <fields hint="raw:RemoveSpecialFields">
+                <remove type="both">_uniqueid</remove>
+              </fields>
+              <fieldMap ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration/fieldMap">
+                <fieldNames hint="raw:AddFieldByFieldName">
+                  <field fieldName="__is_running" returnType="bool" />
+                  <field fieldName="_itemuri" returnType="string" />
+                </fieldNames>
+              </fieldMap>
+              <fields hint="raw:AddComputedIndexField">
+                <field fieldName="parsedowner">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.ParsedOwner, Sitecore.ContentTesting</field>
+                <field fieldName="friendlyowner">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.FriendlyOwner, Sitecore.ContentTesting</field>
+                <field fieldName="host">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.HostItemPartial, Sitecore.ContentTesting</field>
+                <field fieldName="hosturi">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.HostItem, Sitecore.ContentTesting</field>
+                <field fieldName="_searchtext">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.TestSearchContent, Sitecore.ContentTesting</field>
+                <field fieldName="datasourceitems">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.TestDataSources, Sitecore.ContentTesting</field>
+                <!-- Need to ensure the _uniqueid will not clash with items in the sitecore_master_index -->
+                <field fieldName="_uniqueid" type="Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.PrefixedUniqueId, Sitecore.ContentTesting">
+                  <Prefix>[sitecore_testing_index]</Prefix>
+                </field>
+                <field fieldName="_itemuri" type="Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.ItemUri, Sitecore.ContentTesting"/>
+              </fields>
+            </configuration>
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Sitecore.ContentTesting.ContentSearch.SpecificSitecoreItemCrawler, Sitecore.ContentTesting">
+                <Database>master</Database>
+                <Root>/sitecore/system/Marketing Control Panel/Test Lab</Root>
+              </crawler>
+            </locations>
+          </index>
+          <!-- Index used for storing data for suggesting tests for an item -->
+          <index id="sitecore_suggested_test_index" type="Sitecore.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.ContentSearch.SolrProvider">
+            <param desc="name">$(id)</param>
+            <param desc="core">$(id)</param>
+            <param desc="propertyStore" ref="contentSearch/indexConfigurations/databasePropertyStore" param1="$(id)" />
+            <configuration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration">
+              <exclude hint="list:ExcludeTemplate">
+                <folder>{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}</folder>
+                <bucket>{ADB6CA4F-03EF-4F47-B9AC-9CE2BA53FF97}</bucket>
+                <mainSection>{E3E2D58C-DF95-4230-ADC9-279924CECE84}</mainSection>
+              </exclude>
+              <fields hint="raw:RemoveSpecialFields">
+                <remove type="both">_uniqueid</remove>
+              </fields>
+              <fields hint="raw:AddComputedIndexField">
+                <field fieldName="parsedowner">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.ParsedOwner, Sitecore.ContentTesting</field>
+                <field fieldName="friendlyowner">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.FriendlyOwner, Sitecore.ContentTesting</field>
+                <field fieldName="host">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.HostItemPartial, Sitecore.ContentTesting</field>
+                <field fieldName="hosturi">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.HostItem, Sitecore.ContentTesting</field>
+                <field fieldName="_searchtext">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.TestSearchContent, Sitecore.ContentTesting</field>
+                <field fieldName="suggestion">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.SuggestedTests, Sitecore.ContentTesting</field>
+                <field fieldName="impact">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.TestImpactMetric, Sitecore.ContentTesting</field>
+                <field fieldName="potential">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.TestPotentialMetric, Sitecore.ContentTesting</field>
+                <field fieldName="recommendation">Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.TestRecommendationMetric, Sitecore.ContentTesting</field>
+                <!-- Need to ensure the _uniqueid will not clash with items in the sitecore_master_index -->
+                <field fieldName="_uniqueid" type="Sitecore.ContentTesting.ContentSearch.ComputedIndexFields.PrefixedUniqueId, Sitecore.ContentTesting">
+                  <Prefix>[sitecore_suggested_test_index]</Prefix>
+                </field>
+              </fields>
+            </configuration>
+            <strategies hint="list:AddStrategy">
+              <strategy ref="contentSearch/indexConfigurations/indexUpdateStrategies/syncMaster" />
+            </strategies>
+            <locations hint="list:AddCrawler">
+              <crawler type="Sitecore.ContentTesting.ContentSearch.SpecificSitecoreItemCrawler, Sitecore.ContentTesting">
+                <Database>master</Database>
+                <Root>/sitecore/content</Root>
+              </crawler>
+            </locations>
+          </index>
+        </indexes>
+      </configuration>
+    </contentSearch>
+  </sitecore>
+</configuration>

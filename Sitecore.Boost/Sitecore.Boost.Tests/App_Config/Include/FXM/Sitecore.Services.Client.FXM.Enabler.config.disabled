@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+Purpose
+________
+
+This config file enables the "ServicesOnPolicy" for Sitecore Services.
+By enabling this policy, all requests to the Item/EntityService originating
+from outside this server are accepted.
+
+For more information on policies see Sitecore.Services.Client.config
+
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <settings>
+      <setting name="Sitecore.Services.SecurityPolicy">
+        <patch:attribute name="value">Sitecore.Services.Infrastructure.Web.Http.Security.ServicesOnPolicy, Sitecore.Services.Infrastructure</patch:attribute>
+      </setting>
+    </settings>
+  </sitecore>
+</configuration>

@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+Important: You must specify a value for the Sitecore.Cloud.Xdb.DeploymentId setting before you start Sitecore for the first time after you
+have configured Sitecore to connect to the xDB Cloud Edition.
+ 
+Purpose: This include file contains configuration settings for connecting to the xDB Cloud Edition.
+ 
+To enable this include file, rename it so that it has a ".config" extension.
+
+ -->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <settings>
+      <!--  DEPLOYMENT ID
+            Identifies the xDB Cloud Edition instance that this Sitecore installation should connect to.
+            This string must only contain letters and numbers (no whitespace).
+            You must specify a value for this setting before you run Sitecore for the first time after you configure Sitecore to use a cloud xDB.
+            Default value: "" (not connected to xDB Cloud Edition)
+      -->
+      <setting name="Sitecore.Cloud.Xdb.DeploymentId" value="" />
+
+      <!-- DEPLOYMENT TYPE
+           Allowed values are: 
+           Prod
+           NonProd
+           
+           Sitecore will not boot if this setting doesn't match what is retrieved from the xdb service.
+           Running a production solution on a non-prod SLA will degrade your overall SLA.
+           Running a non-production solution on a production data set will pollute the production data set.
+      -->
+      <setting name="Sitecore.Cloud.Xdb.DeploymentType" value="NonProd" />
+    </settings>
+    <httpTransportFactory type="Sitecore.Cloud.Xdb.CloudBasedTransportFactory, Sitecore.Cloud.Xdb" singleInstance="true"/>
+
+    <reporting>
+      <remote enabled="true">
+        <proxyDataSource type="Sitecore.Analytics.Reporting.Datasources.Remote.RemoteReportDataSourceProxy, Sitecore.Analytics" />
+        <paths>
+          <Reporting>/~/v75/reporting/remotedatasourceproxy/</Reporting>
+          <DefinitionDeployment>/~/v75/reporting/masterdata/datadefinitionservice/</DefinitionDeployment>
+        </paths>
+      </remote>
+    </reporting>
+	
+	<marketingDefinitions>
+      
+      <deploymentManager>
+        <param desc="targetRepository">remote</param>
+      </deploymentManager>
+
+      <!--Enable remote definition repositories-->
+      <campaign>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.Campaigns.Data.Remote.CampaignRemoteDefinitionRepository, Sitecore.Marketing" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/campaign/</param>
+          </remote>
+        </repositories>
+      </campaign>
+
+      <goal>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.Goals.Data.Remote.GoalRemoteDefinitionRepository, Sitecore.Marketing" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/goal/</param>
+          </remote>
+        </repositories>
+      </goal>
+
+      <outcome>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.Outcomes.Data.Remote.OutcomeRemoteDefinitionRepository, Sitecore.Marketing" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/outcome/</param>
+          </remote>
+        </repositories>
+      </outcome>
+      <!--End-->
+	  
+	  <asset>
+        <repositories>
+          <remote type="Sitecore.Marketing.Definitions.MarketingAssets.Data.Remote.MarketingAssetRemoteDefinitionRepository, Sitecore.Marketing.Definitions.MarketingAssets.Repositories" singleInstance="true">
+            <param desc="httpTransport" ref="httpTransportFactory" />
+            <param desc="handler">/~/v80/marketingdefinitions/remote/asset/</param>
+          </remote>
+        </repositories>
+      </asset>      
+    </marketingDefinitions>
+	
+	<taxonomy>
+      <deployHandler>
+        <patch:delete />
+      </deployHandler>
+
+      <deployHandler type="Sitecore.Marketing.Taxonomy.Deploy.HttpDeployHandler, Sitecore.Marketing.Taxonomy" singleInstance="true">
+        <param desc="httpTransport" ref="httpTransportFactory"/>
+        <param desc="publishPath">/~/v80/publish/taxonomy/</param>
+      </deployHandler>
+    </taxonomy>
+
+    <aggregation>
+      <reportingStorageProviders>
+        <primary type="Sitecore.Analytics.Aggregation.SqlReportingStorageProvider, Sitecore.Analytics.Sql" singleInstance="true">
+          <patch:delete />
+        </primary>
+        <secondary.live type="Sitecore.Analytics.Aggregation.SqlReportingStorageProvider, Sitecore.Analytics.Sql" singleInstance="true">
+          <patch:delete />
+        </secondary.live>
+        <secondary.history type="Sitecore.Analytics.Aggregation.SqlReportingStorageProvider, Sitecore.Analytics.Sql" singleInstance="true">
+          <patch:delete />
+        </secondary.history>
+        <remote type="Sitecore.Analytics.Reporting.DefinitionData.RemoteWriteOnlyDefinitionsStorageProvider, Sitecore.Analytics" singleInstance="true" />
+      </reportingStorageProviders>
+    </aggregation>
+
+    <hooks>
+      <hook type="Sitecore.Cloud.Xdb.DisableAggregation, Sitecore.Cloud.Xdb" patch:after="processor[@type='Sitecore.Analytics.Aggregation.AggregationLoader, Sitecore.Analytics.Aggregation']"/>
+      <hook type="Sitecore.Cloud.Xdb.DisableAutomation, Sitecore.Cloud.Xdb" patch:after="processor[@type='Sitecore.Analytics.Automation.Aggregation.SubsystemLoader, Sitecore.Analytics.Automation.Aggregation']"/>
+    </hooks>
+
+    <pipelines>
+      <initialize>
+        <processor type="Sitecore.Cloud.Xdb.UpdateXdbConnectionStrings, Sitecore.Cloud.Xdb" patch:before="processor[@type='Sitecore.Pipelines.Loader.LoadHooks, Sitecore.Kernel']" />
+      </initialize>
+    </pipelines>
+  </sitecore>
+</configuration>

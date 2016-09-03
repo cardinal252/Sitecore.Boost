@@ -1,0 +1,34 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:set="http://www.sitecore.net/xmlconfig/set/">
+  <sitecore>
+    <!-- INDEXES -->
+    <listManagementSearch>
+      <indexConfigurations>
+        <listManagementSolrIndexConfiguration ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration">
+          <fieldMap ref="contentSearch/indexConfigurations/defaultSolrIndexConfiguration/fieldMap">
+            <fieldNames hint="raw:AddFieldByFieldName">
+              <field fieldName="name" returnType="string" storageType="YES" indexType="TOKENIZED" vectorType="NO" boost="1f" type="System.String" settingType="Sitecore.ContentSearch.LuceneProvider.LuceneSearchFieldConfiguration, Sitecore.ContentSearch.LuceneProvider">
+                <analyzer type="Sitecore.ContentSearch.LuceneProvider.Analyzers.LowerCaseKeywordAnalyzer, Sitecore.ContentSearch.LuceneProvider" />
+              </field>
+              <field fieldName="owner" returnType="string" storageType="YES" indexType="TOKENIZED" vectorType="NO" boost="1f" type="System.String" settingType="Sitecore.ContentSearch.LuceneProvider.LuceneSearchFieldConfiguration, Sitecore.ContentSearch.LuceneProvider">
+                <analyzer type="Sitecore.ContentSearch.LuceneProvider.Analyzers.LowerCaseKeywordAnalyzer, Sitecore.ContentSearch.LuceneProvider" />
+              </field>
+              <field fieldName="recipients" returnType="int" storageType="YES" indexType="TOKENIZED" vectorType="NO" boost="1f" type="System.Int32" settingType="Sitecore.ContentSearch.LuceneProvider.LuceneSearchFieldConfiguration, Sitecore.ContentSearch.LuceneProvider">
+                <analyzer type="Sitecore.ContentSearch.LuceneProvider.Analyzers.LowerCaseKeywordAnalyzer, Sitecore.ContentSearch.LuceneProvider" />
+              </field>
+              <field fieldName="__fullcreateddate" returnType="string" storageType="YES"  indexType="TOKENIZED"   vectorType="NO" boost="1f" type="System.DateTime" format="yyyyMMddTHHmmss" settingType="Sitecore.ContentSearch.LuceneProvider.LuceneSearchFieldConfiguration, Sitecore.ContentSearch.LuceneProvider">
+                <analyzer type="Sitecore.ContentSearch.LuceneProvider.Analyzers.LowerCaseKeywordAnalyzer, Sitecore.ContentSearch.LuceneProvider" />
+              </field>
+              <field fieldName="__fullupdateddate" returnType="string" storageType="YES"  indexType="TOKENIZED"   vectorType="NO" boost="1f" type="System.DateTime" format="yyyyMMddTHHmmss" settingType="Sitecore.ContentSearch.LuceneProvider.LuceneSearchFieldConfiguration, Sitecore.ContentSearch.LuceneProvider">
+                <analyzer type="Sitecore.ContentSearch.LuceneProvider.Analyzers.LowerCaseKeywordAnalyzer, Sitecore.ContentSearch.LuceneProvider" />
+              </field>
+            </fieldNames>
+          </fieldMap>
+          <fields hint="raw:AddComputedIndexField">
+            <field fieldName="__fullcreateddate">Sitecore.ContentSearch.ComputedFields.CreatedDate,Sitecore.ContentSearch</field>
+            <field fieldName="__fullupdateddate">Sitecore.ContentSearch.ComputedFields.UpdatedDate,Sitecore.ContentSearch</field>
+          </fields>
+        </listManagementSolrIndexConfiguration>
+      </indexConfigurations>
+    </listManagementSearch>
+  </sitecore>
+</configuration>

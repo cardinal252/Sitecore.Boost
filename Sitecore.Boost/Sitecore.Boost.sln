@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.Platform", "Sitecore.Boost.Platform\Sitecore.Boost.Platform.csproj", "{20DD6F90-9830-4FD1-BA9F-4D6B87DFE391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.Tests", "Sitecore.Boost.Tests\Sitecore.Boost.Tests.csproj", "{A4B1F441-7740-4A01-A833-2C75E9647867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.TrackingField.UnitTests", "8.1\Sitecore.Boost.TrackingField.UnitTests\Sitecore.Boost.TrackingField.UnitTests.csproj", "{3DF62495-AB2F-43DE-A30D-51A8985A8F63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B54C9519-6E1F-49FC-A957-70908371F4D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mvc", "Mvc", "{903C8453-948A-4B73-A38E-30FCDD597972}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.RenderingParser", "Sitecore.Boost.RenderingParser\Sitecore.Boost.RenderingParser.csproj", "{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.TrackingField", "8.1\Sitecore.Boost.TrackingField\Sitecore.Boost.TrackingField.csproj", "{08608A65-609F-43A3-B7FC-2051A41EB8F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.InitializeProfiling", "Sitecore.Boost.InitializeProfiling\Sitecore.Boost.InitializeProfiling.csproj", "{3217F16B-E818-45D3-AD39-69B3C4532374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.SetLayoutRenderings", "Sitecore.Boost.SetLayoutRenderings\Sitecore.Boost.SetLayoutRenderings.csproj", "{B8A4B3EE-A9F8-4FD9-A07E-2CED44994968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.GetLayoutFromField", "Sitecore.Boost.GetLayoutFromField\Sitecore.Boost.GetLayoutFromField.csproj", "{8C3DC763-A496-41F6-859A-380F5EDF72B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.1", "8.1", "{060CC843-C497-43C6-8F94-8BB63A1924A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.Core", "Sitecore.Boost.Core\Sitecore.Boost.Core.csproj", "{2D70A650-FD75-448A-98F9-4790D4AD963D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20DD6F90-9830-4FD1-BA9F-4D6B87DFE391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DD6F90-9830-4FD1-BA9F-4D6B87DFE391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DD6F90-9830-4FD1-BA9F-4D6B87DFE391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DD6F90-9830-4FD1-BA9F-4D6B87DFE391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B1F441-7740-4A01-A833-2C75E9647867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B1F441-7740-4A01-A833-2C75E9647867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B1F441-7740-4A01-A833-2C75E9647867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B1F441-7740-4A01-A833-2C75E9647867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DF62495-AB2F-43DE-A30D-51A8985A8F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DF62495-AB2F-43DE-A30D-51A8985A8F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DF62495-AB2F-43DE-A30D-51A8985A8F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DF62495-AB2F-43DE-A30D-51A8985A8F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08608A65-609F-43A3-B7FC-2051A41EB8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08608A65-609F-43A3-B7FC-2051A41EB8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08608A65-609F-43A3-B7FC-2051A41EB8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08608A65-609F-43A3-B7FC-2051A41EB8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3217F16B-E818-45D3-AD39-69B3C4532374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3217F16B-E818-45D3-AD39-69B3C4532374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3217F16B-E818-45D3-AD39-69B3C4532374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3217F16B-E818-45D3-AD39-69B3C4532374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8A4B3EE-A9F8-4FD9-A07E-2CED44994968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A4B3EE-A9F8-4FD9-A07E-2CED44994968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A4B3EE-A9F8-4FD9-A07E-2CED44994968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A4B3EE-A9F8-4FD9-A07E-2CED44994968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C3DC763-A496-41F6-859A-380F5EDF72B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C3DC763-A496-41F6-859A-380F5EDF72B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C3DC763-A496-41F6-859A-380F5EDF72B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C3DC763-A496-41F6-859A-380F5EDF72B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D70A650-FD75-448A-98F9-4790D4AD963D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D70A650-FD75-448A-98F9-4790D4AD963D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D70A650-FD75-448A-98F9-4790D4AD963D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D70A650-FD75-448A-98F9-4790D4AD963D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A4B1F441-7740-4A01-A833-2C75E9647867} = {B54C9519-6E1F-49FC-A957-70908371F4D4}
+		{3DF62495-AB2F-43DE-A30D-51A8985A8F63} = {060CC843-C497-43C6-8F94-8BB63A1924A7}
+		{9ADCFAB9-D2B3-4FF5-BFDE-3DE609516590} = {903C8453-948A-4B73-A38E-30FCDD597972}
+		{08608A65-609F-43A3-B7FC-2051A41EB8F8} = {060CC843-C497-43C6-8F94-8BB63A1924A7}
+		{3217F16B-E818-45D3-AD39-69B3C4532374} = {903C8453-948A-4B73-A38E-30FCDD597972}
+		{B8A4B3EE-A9F8-4FD9-A07E-2CED44994968} = {903C8453-948A-4B73-A38E-30FCDD597972}
+		{8C3DC763-A496-41F6-859A-380F5EDF72B0} = {903C8453-948A-4B73-A38E-30FCDD597972}
+	EndGlobalSection
+EndGlobal

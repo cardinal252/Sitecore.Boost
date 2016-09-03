@@ -1,0 +1,49 @@
+﻿---
+ID: "c2789493-8a40-4cdf-b1de-e1bac0823983"
+Parent: "0a2f64f8-b372-496c-a5ff-77a2b94044d7"
+Template: "0a2f64f8-b372-496c-a5ff-77a2b94044d7"
+Path: /sitecore/templates/User Defined/Boost/Test Item/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {76036F5E-CBCE-46D1-AF0A-4143F9B557AA}
+    {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{0DE5E604-04AA-45D7-90EA-DA32CED329C4}" />
+      <d
+        id="{46D2F427-4CE5-4E1F-BA10-EF3636F43534}"
+        l="{14030E9F-CE92-49C6-AD87-7D49B50E42EA}">
+        <r
+          ds=""
+          id="{493B3A83-0FA7-4484-8FC9-4680991CF743}"
+          par=""
+          ph="content"
+          uid="{A08C9132-DBD1-474F-A2CA-6CA26A4AA650}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1948aab8-1d78-475b-a98c-14e55a5e577c"
+      Hint: Title
+      Value: $name
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20061024T104300
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\Admin

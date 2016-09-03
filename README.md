@@ -29,9 +29,9 @@ Nuget Feeds
 
 For Sitecore 8.1 (and most versions below)
 
-https://www.myget.org/F/sitecoreboost81/api/v2
-https://www.myget.org/F/sitecoreboost81/api/v3/index.json
+- https://www.myget.org/F/sitecoreboost81/api/v2
+- https://www.myget.org/F/sitecoreboost81/api/v3/index.json
 
 For Sitecore 8.2:
-https://www.myget.org/F/sitecoreboost82/api/v2
-https://www.myget.org/F/sitecoreboost82/api/v3/index.json
+- https://www.myget.org/F/sitecoreboost82/api/v2
+- https://www.myget.org/F/sitecoreboost82/api/v3/index.json

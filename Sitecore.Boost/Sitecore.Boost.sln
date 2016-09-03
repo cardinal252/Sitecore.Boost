@@ -27,11 +27,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.1", "8.1", "{060CC843-C49
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.Core", "Sitecore.Boost.Core\Sitecore.Boost.Core.csproj", "{2D70A650-FD75-448A-98F9-4790D4AD963D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.LightTrackingField", "8.2\Sitecore.Boost.TrackingField82\Sitecore.Boost.LightTrackingField.csproj", "{8099399C-86A0-4C76-8932-F94CACD39211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.LightTrackingField", "8.2\Sitecore.Boost.TrackingField\Sitecore.Boost.LightTrackingField.csproj", "{8099399C-86A0-4C76-8932-F94CACD39211}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8.2", "8.2", "{D1A05ACC-6A75-4D05-A48D-7B75512C52FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.TrackingField.UnitTests", "8.2\Sitecore.Boost.TrackingField82.UnitTests\Sitecore.Boost.TrackingField.UnitTests.csproj", "{F6775F2D-39A7-45B3-A5FB-64F6F5DFC3AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Boost.TrackingField.UnitTests", "8.2\Sitecore.Boost.TrackingField.UnitTests\Sitecore.Boost.TrackingField.UnitTests.csproj", "{F6775F2D-39A7-45B3-A5FB-64F6F5DFC3AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

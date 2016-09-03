@@ -256,3 +256,5 @@ Lib/Sitecore/*
 
 Lib/Sitecore 8.1/*
 !Lib/Sitecore 8.1/Sitecore Libs Here.txt
+Sitecore.Boost/SendTo81.bat
+Sitecore.Boost/SendTo82.bat

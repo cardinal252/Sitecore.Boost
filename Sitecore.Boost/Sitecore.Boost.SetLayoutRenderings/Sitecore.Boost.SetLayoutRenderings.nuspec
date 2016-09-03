@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Sitecore.Boost.SetLayoutRenderings</id>
+    <version>$version$</version>
+    <title>Sitecore Boost Fix for Setting of Layout Renderings</title>
+    <authors>Nathanael Mann</authors>
+    <owners>Nathanael Mann</owners>
+    <projectUrl>https://github.com/cardinal252/Sitecore.Boost</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sitecore Boost</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+  </metadata>
+</package>

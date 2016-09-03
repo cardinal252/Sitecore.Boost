@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Sitecore.Boost.Core</id>
+    <version>$version$</version>
+    <title>Sitecore Boost Core Library</title>
+    <authors>Nathanael Mann</authors>
+    <owners>Nathanael Mann</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>https://github.com/cardinal252/Sitecore.Boost</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This is the core library for Sitecore.Boost</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+  </metadata>
+</package>

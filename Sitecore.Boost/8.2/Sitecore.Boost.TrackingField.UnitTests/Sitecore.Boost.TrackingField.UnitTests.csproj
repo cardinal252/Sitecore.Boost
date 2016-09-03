@@ -253,7 +253,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sitecore.Boost.TrackingField82\Sitecore.Boost.LightTrackingField.csproj">
+    <ProjectReference Include="..\Sitecore.Boost.TrackingField\Sitecore.Boost.LightTrackingField.csproj">
       <Project>{8099399c-86a0-4c76-8932-f94cacd39211}</Project>
       <Name>Sitecore.Boost.LightTrackingField</Name>
     </ProjectReference>

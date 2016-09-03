@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Sitecore.Boost.LightTrackingField</id>
+    <version>$version$</version>
+    <title>Sitecore Boost Fix for The Tracking Field</title>
+    <authors>Nathanael Mann</authors>
+    <owners>Nathanael Mann</owners>
+    <projectUrl>https://github.com/cardinal252/Sitecore.Boost</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Sitecore Boost</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+	<dependencies>
+		<dependency id="Sitecore.Boost.Core" version="1.0.0" />
+	</dependencies>	
+  </metadata>
+</package>

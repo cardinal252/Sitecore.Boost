@@ -165,7 +165,7 @@ namespace Sitecore.Boost.LightTrackingField
 
             string cacheKey = String.Format("TrackingField_{0}", item.ID);
 
-            if (BoostContext.PublishAwareCache.Contains(item.ID.ToString()))
+            if (BoostContext.PublishAwareCache.Contains(cacheKey))
             {
                 bool result = BoostContext.PublishAwareCache.GetValue<bool>(cacheKey);
                 return result;

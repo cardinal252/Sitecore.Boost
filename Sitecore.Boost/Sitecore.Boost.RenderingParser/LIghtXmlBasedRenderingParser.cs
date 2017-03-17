@@ -21,7 +21,7 @@ namespace Sitecore.Boost.RenderingParser
             string uniqueId = node.GetAttributeValueOrNull("uid");
 
             // NM: Sure this could be figured out - but this makes a HUGE difference
-            string cacheKey = String.Format("LightXmlBasedRenderingParser_{0}", uniqueId);
+            string cacheKey = String.Format("LightXmlBasedRenderingParser_{0}_{1}", uniqueId, Context.Item.ID.ToGuid());
 
             Rendering rendering = BoostContext.PublishAwareCache.Get<Rendering>(cacheKey);
             if (Sitecore.Context.PageMode.IsNormal && !String.IsNullOrEmpty(uniqueId) && rendering != null)

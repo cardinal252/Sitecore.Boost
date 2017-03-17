@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sitecore.Boost.GetLayoutFromField")]
+[assembly: AssemblyTitle("Sitecore.Boost.GetFromLayoutBase")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sitecore.Boost.GetLayoutFromField")]
+[assembly: AssemblyProduct("Sitecore.Boost.GetFromLayoutBase")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8c3dc763-a496-41f6-859a-380f5edf72b0")]
+[assembly: Guid("9adcfab9-d2b3-4ff5-bfde-3de609516590")]
 
 // Version information for an assembly consists of the following four values:
 //

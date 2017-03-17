@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2D70A650-FD75-448A-98F9-4790D4AD963D}</ProjectGuid>
+    <ProjectGuid>{1BDAD2CC-828E-46C1-8317-1E1C332030B3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Boost.Core</RootNamespace>
-    <AssemblyName>Sitecore.Boost.Core</AssemblyName>
+    <RootNamespace>Sitecore.Boost.RenderingParser</RootNamespace>
+    <AssemblyName>Sitecore.Boost.RenderingParser</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -42,11 +42,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.ContentTesting">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ContentTesting.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentTesting.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.ContentTesting.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\Lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="Sitecore.Mvc">
+      <HintPath>..\..\Lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -74,20 +83,22 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Sitecore.Boost\ClearCache.Config" />
+    <Content Include="App_Config\Include\Sitecore.Boost\Sitecore.Boost.RenderingParser.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\Cache.cs" />
-    <Compile Include="Caching\CacheStatus.cs" />
-    <Compile Include="Caching\ClearBoostCache.cs" />
-    <Compile Include="Caching\DefaultCacheStatusProvider.cs" />
-    <Compile Include="Caching\ICache.cs" />
-    <Compile Include="Caching\ICacheStatusProvider.cs" />
-    <Compile Include="Configuration\BoostContext.cs" />
-    <Compile Include="Configuration\ContextFactory.cs" />
-    <Compile Include="Configuration\IBoostContext.cs" />
+    <Compile Include="GetFromFinalLayout.cs" />
+    <Compile Include="GetFromVisualisation.cs" />
+    <Compile Include="LightGetFromLayoutBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sitecore.Boost.Core\Sitecore.Boost.Core.csproj">
+      <Project>{2d70a650-fd75-448a-98f9-4790d4ad963d}</Project>
+      <Name>Sitecore.Boost.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -102,9 +113,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64310</DevelopmentServerPort>
+          <DevelopmentServerPort>64807</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:64310/</IISUrl>
+          <IISUrl>http://localhost:64807/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

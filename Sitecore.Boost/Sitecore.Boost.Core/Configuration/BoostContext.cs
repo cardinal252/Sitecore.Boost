@@ -9,7 +9,7 @@ namespace Sitecore.Boost.Core.Configuration
 
         public BoostContext()
         {
-            PublishAwareCache = new Cache();
+            PublishAwareCache = new Cache(new DefaultCacheStatusProvider());
         }
 
         public ICache PublishAwareCache { get; set; }

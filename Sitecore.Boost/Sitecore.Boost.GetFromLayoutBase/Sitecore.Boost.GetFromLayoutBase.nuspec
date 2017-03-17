@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Sitecore.Boost.RenderingParser</id>
+    <id>Sitecore.Boost.GetFromLayoutBase</id>
     <version>$version$</version>
-    <title>Sitecore Boost Fix for Rendering Parsing</title>
+    <title>Sitecore Boost Fix for Layout Parsing</title>
     <authors>Nathanael Mann</authors>
     <owners>Nathanael Mann</owners>
     <projectUrl>https://github.com/cardinal252/Sitecore.Boost</projectUrl>

@@ -12,7 +12,7 @@
     <releaseNotes>Initial Release</releaseNotes>
     <copyright>Copyright 2016</copyright>
 	<dependencies>
-		<dependency id="Sitecore.Boost.Core" version="1.0.1" />
+		<dependency id="Sitecore.Boost.Core" version="1.0.2" />
 	</dependencies>	
   </metadata>
 </package>
